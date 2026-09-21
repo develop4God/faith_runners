@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    No <base> tag here on purpose: this app is published both to
+    arbitrary paths (a static host with --base-href) and to sandboxed
+    origins (e.g. an Artifact) that refuse a <base> pointing anywhere
+    but their own folder. Every asset reference in this build is
+    relative, so a <base> tag isn't needed for normal hosting either.
+  -->
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="FaithRunners — a fast, skill-based arcade race game featuring biblical heroes. No combat, just courage.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="FaithRunners">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>FaithRunners — Sprint 1 Playtest</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
