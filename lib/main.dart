@@ -62,12 +62,51 @@ class _RaceScreenState extends State<RaceScreen> {
             child: _TimerBadge(game: _game),
           ),
           Positioned(
+            top: 16,
+            left: 16,
+            child: _LivesBadge(game: _game),
+          ),
+          Positioned(
             right: 32,
             bottom: 32,
             child: _AbilityButton(game: _game),
           ),
         ],
       ),
+    );
+  }
+}
+
+class _LivesBadge extends StatelessWidget {
+  const _LivesBadge({required this.game});
+
+  final FaithRunnersGame game;
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<void>(
+      stream: Stream.periodic(const Duration(milliseconds: 100)),
+      builder: (context, _) {
+        if (!game.isReady) return const SizedBox(height: 36);
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          decoration: BoxDecoration(
+            color: Colors.black.withValues(alpha: 0.55),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: List.generate(
+              FaithRunnersGame.startingLives,
+              (i) => Icon(
+                Icons.favorite,
+                size: 20,
+                color: i < game.lives ? const Color(0xFFE85D5D) : Colors.white24,
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

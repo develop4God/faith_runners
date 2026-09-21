@@ -11,7 +11,8 @@ import 'search_party_hazard.dart';
 
 /// Sprint 1 slice: "Flight to Egypt" — reach the safe zone before the
 /// search party's sweep catches you, before the timer runs out. Touching
-/// the hazard is a setback (reset to start), never elimination.
+/// the hazard resets David to start and costs a life; running out of
+/// lives ends the match, same as running out of time.
 ///
 /// The arena is a fixed landscape (wide) world, letterboxed to fit any
 /// screen shape via a fixed-resolution camera — so it always renders wide,
@@ -21,6 +22,7 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
   static const double worldWidth = 800;
   static const double worldHeight = 450;
   static const double matchSeconds = 20;
+  static const int startingLives = 3;
 
   FaithRunnersGame()
       : super(
@@ -37,7 +39,9 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
 
   MatchState matchState = MatchState.playing;
   double timeRemaining = matchSeconds;
+  int lives = startingLives;
   late Vector2 _startPosition;
+  bool _touchingHazard = false;
 
   /// True once [player] and friends are safe to read from outside the
   /// game loop (e.g. from a Flutter overlay's StreamBuilder), avoiding a
@@ -103,9 +107,17 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
       return;
     }
 
-    if (hazard.toRect().overlaps(player.toRect())) {
+    final overlappingHazard = hazard.toRect().overlaps(player.toRect());
+    if (overlappingHazard && !_touchingHazard) {
       player.position = _startPosition.clone();
+      lives -= 1;
+      if (lives <= 0) {
+        _endMatch(MatchState.lost);
+        _touchingHazard = overlappingHazard;
+        return;
+      }
     }
+    _touchingHazard = overlappingHazard;
   }
 
   void _endMatch(MatchState result) {
@@ -117,6 +129,8 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
     overlays.remove(matchState == MatchState.won ? 'win' : 'lose');
     matchState = MatchState.playing;
     timeRemaining = matchSeconds;
+    lives = startingLives;
+    _touchingHazard = false;
     player.position = _startPosition.clone();
     player.resetAbilityState();
   }
