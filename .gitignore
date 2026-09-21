@@ -7,17 +7,6 @@ build/
 .pub/
 pubspec.lock
 
-# Platform folders are generated locally via `flutter create .`
-# and are intentionally not committed until a real Flutter
-# toolchain has produced them. /web/ is the exception: we actively
-# tune web-specific config (manifest orientation, index.html) from
-# here since it's our primary test/publish path in this sandbox.
-/android/
-/ios/
-/linux/
-/macos/
-/windows/
-
 *.iml
 .idea/
 .vscode/
