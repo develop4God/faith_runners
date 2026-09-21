@@ -57,7 +57,7 @@ class _RaceScreenState extends State<RaceScreen> {
             },
           ),
           Positioned(
-            top: 16,
+            top: 40,
             right: 16,
             child: _TimerBadge(game: _game),
           ),
@@ -68,7 +68,7 @@ class _RaceScreenState extends State<RaceScreen> {
           ),
           Positioned(
             right: 32,
-            bottom: 32,
+            bottom: 90,
             child: _AbilityButton(game: _game),
           ),
         ],
