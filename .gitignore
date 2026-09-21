@@ -1,0 +1,22 @@
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+pubspec.lock
+
+# Platform folders are generated locally via `flutter create .`
+# and are intentionally not committed until a real Flutter
+# toolchain has produced them.
+/android/
+/ios/
+/linux/
+/macos/
+/windows/
+/web/
+
+*.iml
+.idea/
+.vscode/
