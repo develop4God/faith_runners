@@ -1,0 +1,5 @@
+tags:
+  unit:
+    description: Pure Dart logic tests (models, game math) - fast, no widget pump.
+  widget:
+    description: Widget-level smoke tests that pump the Flutter tree.

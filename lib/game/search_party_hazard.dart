@@ -21,8 +21,9 @@ class SearchPartyHazard extends RectangleComponent {
   @override
   void update(double dt) {
     super.update(dt);
-    position.x += _direction * _speed * dt;
-    if (position.x <= 0 || position.x + size.x >= arenaWidth) {
+    final maxX = arenaWidth - size.x;
+    position.x = (position.x + _direction * _speed * dt).clamp(0, maxX);
+    if (position.x <= 0 || position.x >= maxX) {
       _direction *= -1;
     }
   }
