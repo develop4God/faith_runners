@@ -15,7 +15,7 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
     required this.joystick,
     required Vector2 position,
   }) : super(
-          size: Vector2(30, 64),
+          size: Vector2(56, 120),
           position: position,
           anchor: Anchor.center,
         );
