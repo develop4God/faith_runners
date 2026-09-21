@@ -10,3 +10,4 @@ pubspec.lock
 *.iml
 .idea/
 .vscode/
+devtools_options.yaml
