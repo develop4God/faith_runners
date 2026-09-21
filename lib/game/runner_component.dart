@@ -16,7 +16,7 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
     required Vector2 position,
     required this.arenaSize,
   }) : super(
-          size: Vector2(56, 120),
+          size: Vector2(59, 120),
           position: position,
           anchor: Anchor.center,
         );
@@ -52,7 +52,7 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
     final idleSprite = await Sprite.load('heroes/david_idle.png');
     final abilitySprite = await Sprite.load('heroes/david_ability_pose.png');
     final runImage = await game.images.load('heroes/david_run_cycle.png');
-    final runSheet = SpriteSheet(image: runImage, srcSize: Vector2(169, 369));
+    final runSheet = SpriteSheet(image: runImage, srcSize: Vector2(162, 171));
 
     animations = {
       _RunnerAnim.idle: SpriteAnimation.spriteList([idleSprite], stepTime: 1),
