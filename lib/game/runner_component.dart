@@ -14,6 +14,7 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
     required this.hero,
     required this.joystick,
     required Vector2 position,
+    required this.arenaSize,
   }) : super(
           size: Vector2(56, 120),
           position: position,
@@ -24,6 +25,10 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
 
   final RunnerHero hero;
   final JoystickComponent joystick;
+
+  /// Bounds of the fixed-resolution world (not the device screen), used to
+  /// clamp the dash so David can't be flung outside the arena.
+  final Vector2 arenaSize;
 
   bool _facingLeft = false;
   Vector2 _facingDirection = Vector2(1, 0);
@@ -67,8 +72,8 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
 
     final target = position + _facingDirection * _dashDistance;
     position = Vector2(
-      target.x.clamp(0, game.size.x),
-      target.y.clamp(0, game.size.y),
+      target.x.clamp(0, arenaSize.x),
+      target.y.clamp(0, arenaSize.y),
     );
     return true;
   }
