@@ -57,9 +57,9 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
     camera.viewfinder.position = Vector2(worldWidth / 2, worldHeight / 2);
 
     joystick = JoystickComponent(
-      knob: CircleComponent(radius: 20, paint: Paint()..color = Colors.white54),
-      background: CircleComponent(radius: 50, paint: Paint()..color = Colors.white24),
-      margin: const EdgeInsets.only(left: 32, bottom: 32),
+      knob: CircleComponent(radius: 30, paint: Paint()..color = Colors.white54),
+      background: CircleComponent(radius: 75, paint: Paint()..color = Colors.white24),
+      margin: const EdgeInsets.only(left: 32, bottom: 90),
     );
 
     safeZone = SafeZoneComponent(

@@ -8,8 +8,14 @@ enum _RunnerAnim { idle, running, ability }
 /// David's real art wired in: idle when still, run-cycle animation while
 /// the joystick is pushed (mirrored to face travel direction), and his
 /// ability pose during the sling dash.
-class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
-    with HasGameReference {
+///
+/// The idle, running, and ability art have different native aspect ratios
+/// (idle is a tall/thin standing pose; the run cycle is a wider mid-stride
+/// crop). [_visual] is a child sized to whichever animation's own aspect
+/// ratio at a fixed height, so switching animations never stretches the
+/// art — only [RunnerComponent] itself keeps a fixed size, since that's
+/// also the hitbox used for collision.
+class RunnerComponent extends PositionComponent with HasGameReference {
   RunnerComponent({
     required this.hero,
     required this.joystick,
@@ -21,7 +27,10 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
           anchor: Anchor.center,
         );
 
+  static const double _renderHeight = 120;
   static const double _dashDistance = 90;
+
+  final _RunnerVisual _visual = _RunnerVisual(renderHeight: _renderHeight);
 
   final RunnerHero hero;
   final JoystickComponent joystick;
@@ -48,18 +57,8 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-
-    final idleSprite = await Sprite.load('heroes/david_idle.png');
-    final abilitySprite = await Sprite.load('heroes/david_ability_pose.png');
-    final runImage = await game.images.load('heroes/david_run_cycle.png');
-    final runSheet = SpriteSheet(image: runImage, srcSize: Vector2(162, 171));
-
-    animations = {
-      _RunnerAnim.idle: SpriteAnimation.spriteList([idleSprite], stepTime: 1),
-      _RunnerAnim.running: runSheet.createAnimation(row: 0, stepTime: 0.12),
-      _RunnerAnim.ability: SpriteAnimation.spriteList([abilitySprite], stepTime: 1),
-    };
-    current = _RunnerAnim.idle;
+    await add(_visual..anchor = Anchor.center);
+    _visual.position = size / 2;
   }
 
   /// David's sling dash: an instant burst in the direction he's facing.
@@ -88,12 +87,12 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
 
     if (_abilityTimeRemaining > 0) {
       _abilityTimeRemaining -= dt;
-      current = _RunnerAnim.ability;
+      _visual.current = _RunnerAnim.ability;
       return;
     }
 
     final moving = !joystick.delta.isZero();
-    current = moving ? _RunnerAnim.running : _RunnerAnim.idle;
+    _visual.current = moving ? _RunnerAnim.running : _RunnerAnim.idle;
 
     if (moving) {
       position += joystick.relativeDelta * hero.baseSpeed * dt;
@@ -102,8 +101,55 @@ class RunnerComponent extends SpriteAnimationGroupComponent<_RunnerAnim>
       final movingLeft = joystick.relativeDelta.x < 0;
       if (movingLeft != _facingLeft) {
         _facingLeft = movingLeft;
-        flipHorizontallyAroundCenter();
+        _visual.flipHorizontallyAroundCenter();
       }
     }
+  }
+}
+
+/// Renders David's current animation at a fixed height, resizing its width
+/// to match each sprite's own aspect ratio so switching between the tall
+/// idle pose and the wider run-cycle frames never stretches the art.
+class _RunnerVisual extends SpriteAnimationGroupComponent<_RunnerAnim>
+    with HasGameReference {
+  _RunnerVisual({required this.renderHeight});
+
+  final double renderHeight;
+
+  @override
+  Future<void> onLoad() async {
+    await super.onLoad();
+
+    final idleSprite = await Sprite.load('heroes/david_idle.png');
+    final abilitySprite = await Sprite.load('heroes/david_ability_pose.png');
+    final runImage = await game.images.load('heroes/david_run_cycle.png');
+    final runSheet = SpriteSheet(image: runImage, srcSize: Vector2(162, 171));
+
+    animations = {
+      _RunnerAnim.idle: SpriteAnimation.spriteList([idleSprite], stepTime: 1),
+      _RunnerAnim.running: runSheet.createAnimation(row: 0, stepTime: 0.12),
+      _RunnerAnim.ability: SpriteAnimation.spriteList([abilitySprite], stepTime: 1),
+    };
+    current = _RunnerAnim.idle;
+    _syncSizeToCurrentSprite();
+  }
+
+  @override
+  set current(_RunnerAnim? value) {
+    super.current = value;
+    _syncSizeToCurrentSprite();
+  }
+
+  void _syncSizeToCurrentSprite() {
+    final sprite = animationTicker?.getSprite();
+    if (sprite == null) return;
+    final aspectRatio = sprite.srcSize.x / sprite.srcSize.y;
+    size = Vector2(renderHeight * aspectRatio, renderHeight);
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    _syncSizeToCurrentSprite();
   }
 }
