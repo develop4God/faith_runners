@@ -55,6 +55,11 @@ class _RaceScreenState extends State<RaceScreen> {
             right: 16,
             child: _TimerBadge(game: _game),
           ),
+          Positioned(
+            right: 32,
+            bottom: 32,
+            child: _AbilityButton(game: _game),
+          ),
         ],
       ),
     );
@@ -80,6 +85,57 @@ class _TimerBadge extends StatelessWidget {
           child: Text(
             game.timeRemaining.ceil().toString(),
             style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _AbilityButton extends StatelessWidget {
+  const _AbilityButton({required this.game});
+
+  final FaithRunnersGame game;
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<void>(
+      stream: Stream.periodic(const Duration(milliseconds: 100)),
+      builder: (context, _) {
+        if (!game.isReady) return const SizedBox(width: 64, height: 64);
+        final ready = game.player.abilityReady;
+        return GestureDetector(
+          onTap: () => game.player.tryActivateAbility(),
+          child: SizedBox(
+            width: 64,
+            height: 64,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(
+                  width: 64,
+                  height: 64,
+                  child: CircularProgressIndicator(
+                    value: ready ? 1 : 1 - game.player.abilityCooldownFraction,
+                    strokeWidth: 4,
+                    backgroundColor: Colors.black26,
+                    valueColor: AlwaysStoppedAnimation(
+                      ready ? const Color(0xFFE8B84B) : Colors.white38,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 52,
+                  height: 52,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: (ready ? const Color(0xFFE8B84B) : Colors.grey).withValues(alpha: 0.85),
+                  ),
+                  alignment: Alignment.center,
+                  child: const Icon(Icons.bolt, color: Colors.white),
+                ),
+              ],
+            ),
           ),
         );
       },

@@ -24,6 +24,11 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
   double timeRemaining = matchSeconds;
   late Vector2 _startPosition;
 
+  /// True once [player] and friends are safe to read from outside the
+  /// game loop (e.g. from a Flutter overlay's StreamBuilder), avoiding a
+  /// LateInitializationError race against the async work in [onLoad].
+  bool isReady = false;
+
   @override
   Future<void> onLoad() async {
     await super.onLoad();
@@ -52,7 +57,8 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
       position: _startPosition.clone(),
     );
 
-    addAll([safeZone, hazard, joystick, player]);
+    await addAll([safeZone, hazard, joystick, player]);
+    isReady = true;
   }
 
   @override
@@ -87,6 +93,7 @@ class FaithRunnersGame extends FlameGame with HasKeyboardHandlerComponents {
     matchState = MatchState.playing;
     timeRemaining = matchSeconds;
     player.position = _startPosition.clone();
+    player.resetAbilityState();
   }
 
   @override
