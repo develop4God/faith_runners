@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "ruth_ability_vfx",
+  "display_name": "Ruth ability VFX",
+  "story_ref": "Ruth 1",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "512x512",
+      "prompt": "2D game VFX sprite, light green speed-trail swirl with small leaf/wind particles, transparent background, no text, seamless loopable animation frames"
+    }
+  ]
+}

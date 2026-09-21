@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "faithrunners-asset-prompt-v1",
+  "title": "FaithRunners AI Art Prompt",
+  "description": "Schema for every AI-generated art prompt file in this game. One file = one asset (a hero, a map, a sprite/VFX, or a UI piece). Keeping every asset on this shape means a generation script can walk the folders and batch-render without per-asset special-casing.",
+  "type": "object",
+  "required": ["asset_type", "id", "style_guide_ref", "variants"],
+  "properties": {
+    "asset_type": {
+      "type": "string",
+      "enum": ["character", "scenario", "sprite", "ui"],
+      "description": "character = a hero's static poses/portrait. scenario = a map's tileset/background/hazard. sprite = a standalone animated effect not tied to a character pose (ability VFX, hazard animation loops). ui = HUD/menu/meta art."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Stable identifier, matches the Dart model id where one exists (e.g. RunnerHero.id, RaceMap.id)."
+    },
+    "display_name": { "type": "string" },
+    "story_ref": {
+      "type": "string",
+      "description": "Scripture reference this asset is grounded in, e.g. '1 Samuel 17'. Omit for pure-UI assets."
+    },
+    "style_guide_ref": {
+      "type": "string",
+      "description": "Points at style_guide.json's 'id' field. Every generation tool call should prepend that file's 'art_style' and 'negative_prompt' to each variant's prompt text."
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["variant_id", "output_kind", "prompt"],
+        "properties": {
+          "variant_id": {
+            "type": "string",
+            "description": "e.g. idle, run_cycle_4_frames, ability_pose, portrait, tileset_ground, hazard_animation, hud_icon."
+          },
+          "output_kind": {
+            "type": "string",
+            "enum": ["static_image", "sprite_sheet", "seamless_tile", "transparent_vfx_loop"],
+            "description": "Tells the generation tool/pipeline how to post-process the output (e.g. slice a sprite_sheet into frames, tile-test a seamless_tile)."
+          },
+          "resolution": { "type": "string", "default": "1024x1024" },
+          "prompt": { "type": "string" }
+        }
+      }
+    }
+  }
+}

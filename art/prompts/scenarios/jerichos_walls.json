@@ -1,0 +1,33 @@
+{
+  "asset_type": "scenario",
+  "id": "jerichos_walls",
+  "display_name": "Jericho's Walls",
+  "story_ref": "Joshua 6",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "tileset_ground",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, ancient stone city walls, warm sandstone tones, circular march path, no characters, no text"
+    },
+    {
+      "variant_id": "tileset_hazard_zone",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, ancient stone city walls, warm sandstone tones, circular march path tense danger-zone variant, warm-to-dim color transition, no characters, no text"
+    },
+    {
+      "variant_id": "tileset_safe_zone",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, ancient stone city walls, warm sandstone tones, circular march path safe haven variant with glowing soft edge, no characters, no text"
+    },
+    {
+      "variant_id": "background_parallax",
+      "output_kind": "static_image",
+      "resolution": "1920x1080",
+      "prompt": "2D stylized game background, ancient city walls of Jericho under warm dawn sky, distant trumpet-bearers silhouette on the horizon, soft painterly cel-shaded style, empty foreground for gameplay, no characters, no text, wide aspect ratio"
+    }
+  ]
+}

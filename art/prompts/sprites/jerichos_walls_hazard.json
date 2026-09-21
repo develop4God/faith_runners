@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "jerichos_walls_hazard",
+  "display_name": "Jericho's Walls hazard",
+  "story_ref": "Joshua 6",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "1024x1024",
+      "prompt": "2D top-down game sprite, tall ancient stone walls slowly cracking and closing inward, dusty debris particles, non-violent, warm dramatic lighting, transparent background, no text"
+    }
+  ]
+}

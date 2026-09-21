@@ -1,0 +1,33 @@
+{
+  "asset_type": "character",
+  "id": "daniel",
+  "display_name": "Daniel",
+  "story_ref": "Daniel 6",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "idle",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, young man Daniel, calm composed expression, simple blue-grey tunic, steady stance, standing idle pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "run_cycle_4_frames",
+      "output_kind": "sprite_sheet",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character sprite sheet, 4-frame running animation, young man Daniel, calm composed expression, simple blue-grey tunic, steady stance, dynamic running pose sequence, top-down 3/4 angle, transparent background, consistent character design across frames, no text"
+    },
+    {
+      "variant_id": "ability_pose",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, young man Daniel, calm composed expression, simple blue-grey tunic, steady stance, surrounded by a calm golden protective glow/shield bubble, peaceful unshaken expression, dynamic action pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "portrait",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D character portrait icon, young man Daniel, calm composed expression, simple blue-grey tunic, steady stance, soft studio lighting, clean circular icon composition, transparent background, no text"
+    }
+  ]
+}

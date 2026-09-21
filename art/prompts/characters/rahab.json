@@ -1,0 +1,33 @@
+{
+  "asset_type": "character",
+  "id": "rahab",
+  "display_name": "Rahab",
+  "story_ref": "Joshua 2",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "idle",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, young woman Rahab, warm red headscarf, simple modest robe, clever watchful expression, standing idle pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "run_cycle_4_frames",
+      "output_kind": "sprite_sheet",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character sprite sheet, 4-frame running animation, young woman Rahab, warm red headscarf, simple modest robe, clever watchful expression, dynamic running pose sequence, top-down 3/4 angle, transparent background, consistent character design across frames, no text"
+    },
+    {
+      "variant_id": "ability_pose",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, young woman Rahab, warm red headscarf, simple modest robe, clever watchful expression, fading into a soft blue stealth shimmer/translucent glow, finger to lips, sneaking pose, dynamic action pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "portrait",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D character portrait icon, young woman Rahab, warm red headscarf, simple modest robe, clever watchful expression, soft studio lighting, clean circular icon composition, transparent background, no text"
+    }
+  ]
+}

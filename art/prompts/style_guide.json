@@ -1,0 +1,7 @@
+{
+  "id": "style_guide_v1",
+  "art_style": "stylized 2D top-down mobile game art, clean bold silhouettes, chibi-proportioned characters (large head-to-body ratio), bright warm color palette, soft cel-shading, no gritty/realistic textures, readable at small mobile screen size, inspired by Brawl Stars' top-down clarity but with a hopeful/warm biblical-era tone instead of cartoon violence",
+  "negative_prompt": "no weapons drawn as combat tools, no blood, no violence, no photorealism, no dark/gritty tone, no text or watermarks, no extra limbs, no cropped characters",
+  "consistency_anchor": "same lighting direction (top-left soft sun), same color saturation level, same outline thickness across all assets to keep visual unity",
+  "validated_against": "david.idle, david.portrait, david.run_cycle_4_frames, flight_to_egypt.tileset_ground — generated and approved on first pass, see FaithRunners Vision & Game Design doc, Visual Direction section"
+}

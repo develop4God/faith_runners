@@ -1,0 +1,33 @@
+{
+  "asset_type": "character",
+  "id": "nehemiah",
+  "display_name": "Nehemiah",
+  "story_ref": "Nehemiah 6",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "idle",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, adult man Nehemiah, determined builder, simple brown tunic with tool belt, sturdy build, standing idle pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "run_cycle_4_frames",
+      "output_kind": "sprite_sheet",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character sprite sheet, 4-frame running animation, adult man Nehemiah, determined builder, simple brown tunic with tool belt, sturdy build, dynamic running pose sequence, top-down 3/4 angle, transparent background, consistent character design across frames, no text"
+    },
+    {
+      "variant_id": "ability_pose",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, adult man Nehemiah, determined builder, simple brown tunic with tool belt, sturdy build, conjuring a glowing short wooden bridge/plank across a gap with both hands raised, focused determined expression, dynamic action pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "portrait",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D character portrait icon, adult man Nehemiah, determined builder, simple brown tunic with tool belt, sturdy build, soft studio lighting, clean circular icon composition, transparent background, no text"
+    }
+  ]
+}

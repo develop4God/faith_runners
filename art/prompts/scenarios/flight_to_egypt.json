@@ -1,0 +1,33 @@
+{
+  "asset_type": "scenario",
+  "id": "flight_to_egypt",
+  "display_name": "Flight to Egypt",
+  "story_ref": "Matthew 2",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "tileset_ground",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, warm sandy desert path with subtle rock and dune detail, no characters, no text"
+    },
+    {
+      "variant_id": "tileset_hazard_zone",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, warm sandy desert path with subtle rock and dune detail tense danger-zone variant, warm-to-dim color transition, no characters, no text"
+    },
+    {
+      "variant_id": "tileset_safe_zone",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, warm sandy desert path with subtle rock and dune detail safe haven variant with glowing soft edge, no characters, no text"
+    },
+    {
+      "variant_id": "background_parallax",
+      "output_kind": "static_image",
+      "resolution": "1920x1080",
+      "prompt": "2D stylized game background, wide desert horizon at golden dusk, distant palm trees and small dunes, soft painterly cel-shaded style, empty foreground for gameplay, no characters, no text, wide aspect ratio"
+    }
+  ]
+}

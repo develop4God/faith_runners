@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "red_sea_crossing_hazard",
+  "display_name": "Red Sea Crossing hazard",
+  "story_ref": "Exodus 14",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "1024x1024",
+      "prompt": "2D top-down game sprite, tall walls of turquoise water rising and slowly narrowing the path, glowing foam edges, non-violent, dramatic but hopeful tone, transparent background, no text"
+    }
+  ]
+}

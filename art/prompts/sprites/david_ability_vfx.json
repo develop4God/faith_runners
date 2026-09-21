@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "david_ability_vfx",
+  "display_name": "David ability VFX",
+  "story_ref": "1 Samuel 17",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "512x512",
+      "prompt": "2D game VFX sprite, warm golden dash-trail streak with small sparkle particles, glowing marker/waypoint icon, transparent background, no text, seamless loopable animation frames"
+    }
+  ]
+}

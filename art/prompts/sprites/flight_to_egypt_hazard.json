@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "flight_to_egypt_hazard",
+  "display_name": "Flight to Egypt hazard",
+  "story_ref": "Matthew 2",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "1024x1024",
+      "prompt": "2D top-down game sprite, small stylized silhouette group representing a distant search party sweeping across sand, non-violent, non-graphic, simple silhouette figures walking in formation, warm dusty color tones, no weapons visible, transparent background, no text"
+    }
+  ]
+}

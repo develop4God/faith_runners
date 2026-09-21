@@ -1,0 +1,38 @@
+{
+  "asset_type": "ui",
+  "id": "core_hud",
+  "display_name": "Core HUD & menu pieces",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "timer_icon",
+      "output_kind": "static_image",
+      "resolution": "256x256",
+      "prompt": "2D flat game UI icon, simple hourglass symbol, warm gold accent, rounded icon frame, transparent background, no text"
+    },
+    {
+      "variant_id": "position_indicator",
+      "output_kind": "static_image",
+      "resolution": "256x256",
+      "prompt": "2D flat game UI icon, simple numbered rank badge (1st/2nd/3rd style), rounded icon frame, warm gold accent color, transparent background, no text except rank number"
+    },
+    {
+      "variant_id": "rank_ladder_icon",
+      "output_kind": "static_image",
+      "resolution": "256x256",
+      "prompt": "2D flat game UI icon, simple ascending stairs or star-tier symbol, warm gold accent, rounded icon frame, transparent background, no text"
+    },
+    {
+      "variant_id": "post_match_card_frame",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "2D game UI frame border, warm parchment-and-gold ornamental card border, stylized soft cel-shaded style, empty center for content, transparent background, no text"
+    },
+    {
+      "variant_id": "main_menu_background",
+      "output_kind": "static_image",
+      "resolution": "1920x1080",
+      "prompt": "2D stylized game main menu background, warm dawn sky over a hopeful desert/city landscape blending all hero themes, soft painterly cel-shaded style, empty space at top for logo, no characters, no text"
+    }
+  ]
+}

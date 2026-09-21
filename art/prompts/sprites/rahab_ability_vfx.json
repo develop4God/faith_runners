@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "rahab_ability_vfx",
+  "display_name": "Rahab ability VFX",
+  "story_ref": "Joshua 2",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "512x512",
+      "prompt": "2D game VFX sprite, soft blue translucent shimmer particles, fading silhouette outline, transparent background, no text, seamless loopable animation frames"
+    }
+  ]
+}

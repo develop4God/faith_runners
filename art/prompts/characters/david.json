@@ -1,0 +1,33 @@
+{
+  "asset_type": "character",
+  "id": "david",
+  "display_name": "David",
+  "story_ref": "1 Samuel 17",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "idle",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, young shepherd boy David, chibi proportions, simple tan tunic and sandals, holding a sling (not raised, relaxed at side), curious confident expression, standing idle pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "run_cycle_4_frames",
+      "output_kind": "sprite_sheet",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character sprite sheet, 4-frame running animation, young shepherd boy David, chibi proportions, simple tan tunic and sandals, holding a sling (not raised, relaxed at side), curious confident expression, dynamic running pose sequence, top-down 3/4 angle, transparent background, consistent character design across frames, no text"
+    },
+    {
+      "variant_id": "ability_pose",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D top-down mobile game character, young shepherd boy David, chibi proportions, simple tan tunic and sandals, holding a sling (not raised, relaxed at side), curious confident expression, mid-throw, tossing a small glowing marker stone (not at a target/enemy, thrown toward the ground/path), focused determined expression, dynamic action pose, top-down 3/4 angle, transparent background, no text"
+    },
+    {
+      "variant_id": "portrait",
+      "output_kind": "static_image",
+      "resolution": "1024x1024",
+      "prompt": "stylized 2D character portrait icon, young shepherd boy David, chibi proportions, simple tan tunic and sandals, holding a sling (not raised, relaxed at side), curious confident expression, soft studio lighting, clean circular icon composition, transparent background, no text"
+    }
+  ]
+}

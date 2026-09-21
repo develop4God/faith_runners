@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "nehemiah_ability_vfx",
+  "display_name": "Nehemiah ability VFX",
+  "story_ref": "Nehemiah 6",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "512x512",
+      "prompt": "2D game VFX sprite, warm brown-and-gold plank materializing with dust and light particles, short bridge silhouette forming, transparent background, no text, seamless loopable animation frames"
+    }
+  ]
+}

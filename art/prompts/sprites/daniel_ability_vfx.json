@@ -1,0 +1,15 @@
+{
+  "asset_type": "sprite",
+  "id": "daniel_ability_vfx",
+  "display_name": "Daniel ability VFX",
+  "story_ref": "Daniel 6",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "loop",
+      "output_kind": "transparent_vfx_loop",
+      "resolution": "512x512",
+      "prompt": "2D game VFX sprite, golden protective bubble shimmer, calm radiant pulse rings, transparent background, no text, seamless loopable animation frames"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "asset_type": "scenario",
+  "id": "red_sea_crossing",
+  "display_name": "Red Sea Crossing",
+  "story_ref": "Exodus 14",
+  "style_guide_ref": "style_guide_v1",
+  "variants": [
+    {
+      "variant_id": "tileset_ground",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, parted sea corridor, wet sand path, tall water walls on either side, no characters, no text"
+    },
+    {
+      "variant_id": "tileset_hazard_zone",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, parted sea corridor, wet sand path, tall water walls on either side tense danger-zone variant, warm-to-dim color transition, no characters, no text"
+    },
+    {
+      "variant_id": "tileset_safe_zone",
+      "output_kind": "seamless_tile",
+      "resolution": "1024x1024",
+      "prompt": "seamless tileable 2D top-down game texture, parted sea corridor, wet sand path, tall water walls on either side safe haven variant with glowing soft edge, no characters, no text"
+    },
+    {
+      "variant_id": "background_parallax",
+      "output_kind": "static_image",
+      "resolution": "1920x1080",
+      "prompt": "2D stylized game background, parted Red Sea corridor at dawn, tall water walls glowing with soft light, distant shoreline silhouette, soft painterly cel-shaded style, empty foreground for gameplay, no characters, no text, wide aspect ratio"
+    }
+  ]
+}
